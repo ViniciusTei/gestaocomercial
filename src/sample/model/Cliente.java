@@ -1,12 +1,14 @@
 package sample.model;
 
+import java.util.ArrayList;
+
 public class Cliente {
     private String nomeDoCliente;
     private int codigoDoCliente;
     private String CPF;
     private String email;
     private String senha;
-    //todo lista de enderecos
+    private ArrayList<Endereco> enderecos;
 
     public Cliente(String nome, int codigo, String cpf, String email, String senha) {
         this.nomeDoCliente = nome;
@@ -14,6 +16,11 @@ public class Cliente {
         this.CPF = cpf;
         this.email = email;
         this.senha = senha;
+        this.enderecos = new ArrayList<>();
+    }
+
+    public void addEndereco(String rua, String bairro, String cidade, String cep, String pais){
+        this.enderecos.add(new Endereco(rua, bairro, cidade, cep, pais));
     }
 
     public void setNomeDoCliente(String nomeDoCliente) {
@@ -61,5 +68,10 @@ public class Cliente {
     public String getSenha() {
         return senha;
     }
+
+    public ArrayList<Endereco> getEnderecos() {
+        return this.enderecos;
+    }
+
 }
 
