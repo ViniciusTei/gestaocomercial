@@ -76,3 +76,8 @@ Objetos:
             altera status venda
             verifica status venda
     7.Interface
+        tela principal:
+            botoes para cadastro, editar e visualizar
+        tela cadastro cliente
+        tela cadstro venda
+        tela cadastro prdouto
