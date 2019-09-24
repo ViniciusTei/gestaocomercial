@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+  <children>
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="Cadastrar">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Produto" />
+            <MenuItem mnemonicParsing="false" text="Cliente" />
+            <MenuItem mnemonicParsing="false" text="Venda" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Editar">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Estoque" />
+            <MenuItem mnemonicParsing="false" text="Cliente" />
+            <MenuItem mnemonicParsing="false" text="Status da Venda" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Listar">
+          <items>
+                  <MenuItem mnemonicParsing="false" text="Clientes" />
+            <MenuItem mnemonicParsing="false" text="Produtos" />
+                  <MenuItem mnemonicParsing="false" text="Vendas" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+         <children>
+            <HBox layoutX="204.0" layoutY="113.0" prefHeight="116.0" prefWidth="216.0" spacing="150.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <VBox prefHeight="200.0" prefWidth="100.0" spacing="50.0">
+                     <children>
+                        <Label text="Cadastrar" />
+                        <Button mnemonicParsing="false" text="Produto" />
+                        <Button mnemonicParsing="false" text="Cliente" />
+                        <Button mnemonicParsing="false" text="Venda" />
+                     </children>
+                     <padding>
+                        <Insets left="20.0" top="20.0" />
+                     </padding>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0" spacing="50.0">
+                     <children>
+                        <Label text="Alterar">
+                           <padding>
+                              <Insets left="5.0" />
+                           </padding>
+                        </Label>
+                        <Button mnemonicParsing="false" text="Produto" />
+                        <Button mnemonicParsing="false" text="Cliente" />
+                        <Button mnemonicParsing="false" text="Venda" />
+                     </children>
+                     <padding>
+                        <Insets left="20.0" top="20.0" />
+                     </padding>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0" spacing="50.0">
+                     <children>
+                        <Label text="Listar">
+                           <padding>
+                              <Insets left="5.0" />
+                           </padding>
+                        </Label>
+                        <Button mnemonicParsing="false" text="Produto" />
+                        <Button mnemonicParsing="false" text="Cliente" />
+                        <Button mnemonicParsing="false" text="Venda" />
+                     </children>
+                     <padding>
+                        <Insets left="20.0" top="20.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+    </AnchorPane>
+  </children>
+</VBox>
