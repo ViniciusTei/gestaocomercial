@@ -30,14 +30,19 @@
         </Menu>
         <Menu mnemonicParsing="false" text="Listar">
           <items>
-                  <MenuItem mnemonicParsing="false" text="Clientes" />
+                  <MenuItem fx:id="menuItemListarCliente" mnemonicParsing="false" onAction="#handleMenuListarCliente" text="Clientes" />
             <MenuItem mnemonicParsing="false" text="Produtos" />
                   <MenuItem mnemonicParsing="false" text="Vendas" />
           </items>
         </Menu>
+            <Menu mnemonicParsing="false" text="Voltar">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#handleMenuVoltar" text="Voltar Inicio" />
+              </items>
+            </Menu>
       </menus>
     </MenuBar>
-    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+    <AnchorPane fx:id="anchorPanePrincipal" maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
          <children>
             <HBox layoutX="204.0" layoutY="113.0" prefHeight="116.0" prefWidth="216.0" spacing="150.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
@@ -75,7 +80,7 @@
                            </padding>
                         </Label>
                         <Button mnemonicParsing="false" text="Produto" />
-                        <Button fx:id="btnListarCliente" mnemonicParsing="false" text="Cliente" />
+                        <Button fx:id="btnListarCliente" mnemonicParsing="false" onAction="#handleBtnListarCliente" text="Cliente" />
                         <Button mnemonicParsing="false" text="Venda" />
                      </children>
                      <padding>
