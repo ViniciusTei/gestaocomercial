@@ -35,11 +35,6 @@
                   <MenuItem mnemonicParsing="false" text="Vendas" />
           </items>
         </Menu>
-            <Menu mnemonicParsing="false" text="Voltar">
-              <items>
-                <MenuItem mnemonicParsing="false" onAction="#handleMenuVoltar" text="Voltar Inicio" />
-              </items>
-            </Menu>
       </menus>
     </MenuBar>
     <AnchorPane fx:id="anchorPanePrincipal" maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
@@ -50,7 +45,7 @@
                      <children>
                         <Label text="Cadastrar" />
                         <Button mnemonicParsing="false" text="Produto" />
-                        <Button fx:id="btnCadastrarCliente" mnemonicParsing="false" text="Cliente" />
+                        <Button fx:id="btnCadastrarCliente" mnemonicParsing="false" onAction="#handleBtnCadastrarCliente" text="Cliente" />
                         <Button mnemonicParsing="false" text="Venda" />
                      </children>
                      <padding>

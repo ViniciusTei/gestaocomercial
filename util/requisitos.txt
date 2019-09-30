@@ -75,9 +75,12 @@ Objetos:
             add venda
             altera status venda
             verifica status venda
+
     7.Interface
         tela principal:
             botoes para cadastro, editar e visualizar
         tela cadastro cliente
         tela cadstro venda
         tela cadastro prdouto
+
+    obs: verificar como passar propriedades de um controller para outro;

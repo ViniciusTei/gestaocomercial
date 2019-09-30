@@ -65,10 +65,6 @@ public class Cliente {
         return email;
     }
 
-    public String getSenha() {
-        return senha;
-    }
-
     public ArrayList<Endereco> getEnderecos() {
         return this.enderecos;
     }
