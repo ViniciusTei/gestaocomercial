@@ -6,7 +6,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import sample.model.SistemaDAO;
+import sample.model.ClienteDAO;
 import sample.model.Cliente;
 
 import java.net.URL;
@@ -33,12 +33,12 @@ public class controllerListaClientes implements Initializable {
 
     //private ArrayList<Cliente> listaDeClientes = new ArrayList<Cliente>();
     private ObservableList<Cliente> observableList;
-    private SistemaDAO bd;
+    private ClienteDAO bd;
 
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        bd = SistemaDAO.getInstance();
+        bd = ClienteDAO.getInstance();
         carregarTableViewClientes(bd.getLisdaDeClientes());
 
         //evento para alterar os detalhes de cada cliente ao selecionar na tabela
@@ -83,7 +83,7 @@ public class controllerListaClientes implements Initializable {
 
     }
 
-//    public void setBd(SistemaDAO bd) {
+//    public void setBd(ClienteDAO bd) {
 //        this.bd = bd;
 //    }
 }

@@ -4,7 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.layout.AnchorPane;
-import sample.model.SistemaDAO;
+import sample.model.ClienteDAO;
 
 import java.io.IOException;
 import java.net.URL;
@@ -15,7 +15,7 @@ public class Controller implements Initializable {
     @FXML
     private AnchorPane anchorPanePrincipal;
 
-    private SistemaDAO bd = SistemaDAO.getInstance();
+    private ClienteDAO bd = ClienteDAO.getInstance();
 
     FXMLLoader loader = new FXMLLoader();
 
@@ -44,6 +44,11 @@ public class Controller implements Initializable {
         this.anchorPanePrincipal.getChildren().setAll(newAnchorPane);
     }
 
+    @FXML
+    public void handleMenuCadastrarCliente() throws IOException {
+        AnchorPane newAnchorPane = (AnchorPane) loader.load(getClass().getResource("/sample/view/viewCadastroCliente.fxml"));
+        this.anchorPanePrincipal.getChildren().setAll(newAnchorPane);
+    }
     //    @FXML
 //    public void handleMenuVoltar () throws IOException {
 //        this.anchorPanePrincipal.getChildren().setAll(this.oldAnchorPane);

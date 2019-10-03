@@ -19,8 +19,8 @@ public class Cliente {
         this.enderecos = new ArrayList<>();
     }
 
-    public void addEndereco(String rua, String bairro, String cidade, String cep, String pais){
-        this.enderecos.add(new Endereco(rua, bairro, cidade, cep, pais));
+    public void addEndereco(String rua, String bairro, String cidade, String cep, String pais, int n){
+        this.enderecos.add(new Endereco(rua, bairro, cidade, cep, pais, n));
     }
 
     public void setNomeDoCliente(String nomeDoCliente) {
