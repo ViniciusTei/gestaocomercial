@@ -61,6 +61,7 @@ public class controllerCadastroCliente implements Initializable {
         cep = txtCep.getText();
         num = Integer.parseInt(txtNumero.getText());
 
+        System.out.println(rua);
         bd.addCliente(nome, codigo, cpf, email, senha);
         bd.addEndereco(codigo, rua,bairro,cidade,pais,cep,num);
         System.out.println("Cliente cadastrado!");

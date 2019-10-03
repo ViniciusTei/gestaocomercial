@@ -1,5 +1,7 @@
 package sample.controll;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -8,6 +10,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import sample.model.ClienteDAO;
 import sample.model.Cliente;
+import sample.model.Endereco;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -30,9 +33,14 @@ public class controllerListaClientes implements Initializable {
     private TextField textFiltrarNome;
     @FXML
     private CheckBox checkFiltrarNome;
+    @FXML
+    private ComboBox<String> comboEnd = new ComboBox<>();
+    @FXML
+    private Label lblRua, lblNum, lblCep, lblCidade, lblBairro, lblPais;
 
     //private ArrayList<Cliente> listaDeClientes = new ArrayList<Cliente>();
     private ObservableList<Cliente> observableList;
+    private ObservableList<Endereco> observableEnd;
     private ClienteDAO bd;
 
 
@@ -47,20 +55,50 @@ public class controllerListaClientes implements Initializable {
         );
 
         //evento para fitrar nome
-        if(checkFiltrarNome.isSelected()) {
-            carregarTableViewClientes(bd.buscaCliente(textFiltrarNome.getText()));
-        }
+        checkFiltrarNome.selectedProperty().addListener(new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> observableValue, Boolean oldValue, Boolean newValue) {
+                if(newValue) {
+                    filtrarNomes(textFiltrarNome.getText());
+                } else {
+                    carregarTableViewClientes(bd.getLisdaDeClientes());
+                }
+            }
+        });
+
+        //evento para selecionar endereço
+        comboEnd.valueProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
+                setEndereco(t1);
+            }
+        });
     }
 
-//    /* inicia o arraylist de clientes para testar se as outras funções funcionam corretamente */
-//    private void cadastraClientes() {
-//        this.listaDeClientes.add(new Cliente("vinicius", 1, "112.970.396-70", "viniteixeirap@hotmail.com", "199725"));
-//        this.listaDeClientes.add(new Cliente("vitoria", 2, "111.999.396-70", "vitoria@hotmail.com", "199725"));
-//        this.listaDeClientes.add(new Cliente("camila", 3, "112.000.333-77", "camila@hotmail.com", "199725"));
-//        this.listaDeClientes.add(new Cliente("selina", 4, "110.123.123-12", "selina@hotmail.com", "199725"));
-//        System.out.println("clientes cadastrados com sucesso!");
-//    }
+    /* Carrega a combobox de endereços com a quantidade de endereços cadastrados */
+    public void carregaComboEnd(int qtdEnd) {
+        ArrayList<String> strings = new ArrayList<>();
+        for (int i = 0; i < qtdEnd; i++) {
+            strings.add("Endereco " + i+1);
+        }
+        this.comboEnd.getItems().setAll(strings);
+    }
 
+    private void setEndereco (String e) {
+        //recebe o index do endereço a ser mostrado
+        //subtrai 48 pois é o valor dos numericos na tabela ASCII
+        int index = e.charAt(e.length()-1) - 48;
+        setLabelEndereco(observableEnd.get(index - 1));
+    }
+
+    private void setLabelEndereco(Endereco e) {
+        lblRua.setText(e.getRua());
+        lblNum.setText(String.valueOf(e.getNumero()));
+        lblBairro.setText(e.getBairro());
+        lblCep.setText(e.getCep());
+        lblCidade.setText(e.getCidade());
+        lblPais.setText(e.getPais());
+    }
 
     public void carregarTableViewClientes(ArrayList<Cliente> lista) {
         System.out.println("carregando table view...");
@@ -72,18 +110,31 @@ public class controllerListaClientes implements Initializable {
 
     public void selecionarItemTableView (Cliente c) {
         System.out.println("Cliente selecionado!");
+        clearEnd();
         labelClienteCodigo.setText(String.valueOf(c.getCodigoDoCliente()));
         labelClienteNome.setText(c.getNomeDoCliente());
         labelClienteCpf.setText(c.getCPF());
         labelClienteEmail.setText(c.getEmail());
+        observableEnd = FXCollections.observableArrayList(c.getEnderecos());
+        carregaComboEnd(c.getEnderecos().size());
 
     }
 
-    public void filtrarNomes() {
+    public void filtrarNomes(String s) {
+        try{
+            carregarTableViewClientes(bd.buscaCliente(s));
+        } catch (NullPointerException e) {
+            System.out.println("Nao possui clientes com esse nome! Ou nome errado!");
+        }
 
     }
 
-//    public void setBd(ClienteDAO bd) {
-//        this.bd = bd;
-//    }
+    private void clearEnd(){
+        lblRua.setText("");
+        lblNum.setText("");
+        lblBairro.setText("");
+        lblCep.setText("");
+        lblCidade.setText("");
+        lblPais.setText("");
+    }
 }
