@@ -23,8 +23,8 @@
         </Menu>
         <Menu mnemonicParsing="false" text="Editar">
           <items>
+            <MenuItem fx:id="menuAlterarCliente" mnemonicParsing="false" onAction="#handleMenuAlterarCliente" text="Cliente" />
             <MenuItem mnemonicParsing="false" text="Estoque" />
-            <MenuItem mnemonicParsing="false" text="Cliente" />
             <MenuItem mnemonicParsing="false" text="Status da Venda" />
           </items>
         </Menu>
@@ -60,7 +60,7 @@
                            </padding>
                         </Label>
                         <Button mnemonicParsing="false" text="Produto" />
-                        <Button mnemonicParsing="false" text="Cliente" />
+                        <Button fx:id="btnAlterarCliente" mnemonicParsing="false" onAction="#handleBtnAlterarCliente" text="Cliente" />
                         <Button mnemonicParsing="false" text="Venda" />
                      </children>
                      <padding>

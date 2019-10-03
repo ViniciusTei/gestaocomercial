@@ -49,6 +49,17 @@ public class Controller implements Initializable {
         AnchorPane newAnchorPane = (AnchorPane) loader.load(getClass().getResource("/sample/view/viewCadastroCliente.fxml"));
         this.anchorPanePrincipal.getChildren().setAll(newAnchorPane);
     }
+    @FXML
+    public void handleBtnAlterarCliente () throws IOException {
+        AnchorPane newAnchorPane = (AnchorPane) loader.load(getClass().getResource("/sample/view/ViewAlterarCliente.fxml"));
+        this.anchorPanePrincipal.getChildren().setAll(newAnchorPane);
+    }
+
+    @FXML
+    public void handleMenuAlterarCliente() throws IOException {
+        AnchorPane newAnchorPane = (AnchorPane) loader.load(getClass().getResource("/sample/view/ViewAlterarCliente.fxml"));
+        this.anchorPanePrincipal.getChildren().setAll(newAnchorPane);
+    }
     //    @FXML
 //    public void handleMenuVoltar () throws IOException {
 //        this.anchorPanePrincipal.getChildren().setAll(this.oldAnchorPane);

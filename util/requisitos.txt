@@ -2,7 +2,7 @@ TP Gestao comercial
 
 To-Do:
     cadastramento de produtos
-    cadastramento de clientes
+    cadastramento de clientes -> FALTA TRATAR ERROS NAS ENTRADAS DE CADASTRO
     cadastramento de vendas
     listagem de produtos/clientes/vendas
     alteração de estoque

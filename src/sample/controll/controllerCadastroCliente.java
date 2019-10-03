@@ -2,6 +2,7 @@ package sample.controll;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import sample.model.ClienteDAO;
 import javafx.scene.control.TextField;
 import javafx.scene.control.PasswordField;
@@ -63,7 +64,17 @@ public class controllerCadastroCliente implements Initializable {
         System.out.println(rua);
         bd.addCliente(nome, codigo, cpf, email, senha);
         bd.addEndereco(codigo, rua,bairro,cidade,pais,cep,num);
+
+        showSucessAlert();
         System.out.println("Cliente cadastrado!");
+    }
+
+    private void showSucessAlert() {
+        Alert alerta = new Alert(Alert.AlertType.CONFIRMATION);
+        alerta.setTitle("Sucesso");
+        alerta.setHeaderText(null);
+        alerta.setContentText("Cliente cadastrado!");
+        alerta.showAndWait();
     }
 
 }
