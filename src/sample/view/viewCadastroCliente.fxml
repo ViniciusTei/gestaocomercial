@@ -86,7 +86,7 @@
                         <Label text="Cidade" GridPane.rowIndex="3" />
                         <Label text="Pais" GridPane.rowIndex="4" />
                         <Label text="CEP" GridPane.rowIndex="5" />
-                        <TextField fx:id="txtRua" alignment="CENTER_RIGHT" GridPane.columnIndex="1" />
+                        <TextField fx:id="txtRua" GridPane.columnIndex="1" />
                         <TextField fx:id="txtNum" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                         <TextField fx:id="txtBairro" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                         <TextField fx:id="txtCidade" GridPane.columnIndex="1" GridPane.rowIndex="3" />

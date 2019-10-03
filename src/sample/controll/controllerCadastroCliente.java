@@ -2,7 +2,6 @@ package sample.controll;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
 import sample.model.ClienteDAO;
 import javafx.scene.control.TextField;
 import javafx.scene.control.PasswordField;
@@ -26,7 +25,7 @@ public class controllerCadastroCliente implements Initializable {
     @FXML
     private TextField txtRua;
     @FXML
-    private TextField txtNumero;
+    private TextField txtNum;
     @FXML
     private TextField txtBairro;
     @FXML
@@ -59,7 +58,7 @@ public class controllerCadastroCliente implements Initializable {
         cidade = txtCidade.getText();
         pais = txtPais.getText();
         cep = txtCep.getText();
-        num = Integer.parseInt(txtNumero.getText());
+        num = Integer.parseInt(txtNum.getText());
 
         System.out.println(rua);
         bd.addCliente(nome, codigo, cpf, email, senha);
