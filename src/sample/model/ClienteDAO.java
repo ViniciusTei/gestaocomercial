@@ -7,7 +7,7 @@ public class ClienteDAO {
     private ArrayList<Cliente> lisdaDeClientes;
 
     private ClienteDAO() {
-        this.lisdaDeClientes = new ArrayList<>();;
+        this.lisdaDeClientes = new ArrayList<>();
         this.lisdaDeClientes.add(new Cliente("vinicius", 1, "112.970.396-70", "viniteixeirap@hotmail.com", "199725"));
         this.lisdaDeClientes.add(new Cliente("vitoria", 2, "111.999.396-70", "vitoria@hotmail.com", "199725"));
         this.lisdaDeClientes.add(new Cliente("camila", 3, "112.000.333-77", "camila@hotmail.com", "199725"));
@@ -64,7 +64,7 @@ public class ClienteDAO {
 
     /* Método que retorna uma lista de clientes com o mesmmo nome
      */
-    public ArrayList<Cliente> buscaCliente(String nome) {
+    public ArrayList<Cliente> getListaClientePorNome(String nome) {
         ArrayList<Cliente> newlist = new ArrayList<>();
         for (Cliente clienteBuscado : lisdaDeClientes) {
             if(clienteBuscado.getNomeDoCliente().equals(nome)) {
@@ -79,7 +79,7 @@ public class ClienteDAO {
         return lisdaDeClientes;
     }
 
-    private Cliente getCliente(int codCliente) {
+    public Cliente getCliente(int codCliente) {
         for(Cliente c : this.lisdaDeClientes) {
             if(c.getCodigoDoCliente() == codCliente) {
                 return c;

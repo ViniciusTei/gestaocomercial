@@ -27,10 +27,6 @@ public class Cliente {
         this.nomeDoCliente = nomeDoCliente;
     }
 
-    public void setCodigoDoCliente(int codigoDoCliente) {
-        this.codigoDoCliente = codigoDoCliente;
-    }
-
     public void setCPF(String CPF) {
         this.CPF = CPF;
     }

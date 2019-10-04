@@ -76,12 +76,13 @@ public class controllerListaClientes implements Initializable {
     }
 
     /* Carrega a combobox de endereços com a quantidade de endereços cadastrados */
-    public void carregaComboEnd(int qtdEnd) {
+    private void carregaComboEnd(int qtdEnd) {
         ArrayList<String> strings = new ArrayList<>();
         for (int i = 0; i < qtdEnd; i++) {
             strings.add("Endereco " + i+1);
         }
         this.comboEnd.getItems().setAll(strings);
+        clearEnd();
     }
 
     private void setEndereco (String e) {
@@ -100,7 +101,7 @@ public class controllerListaClientes implements Initializable {
         lblPais.setText(e.getPais());
     }
 
-    public void carregarTableViewClientes(ArrayList<Cliente> lista) {
+    private void carregarTableViewClientes(ArrayList<Cliente> lista) {
         System.out.println("carregando table view...");
         tableColumnClientes.setCellValueFactory(new PropertyValueFactory<>("nomeDoCliente"));
         observableList = FXCollections.observableArrayList(lista);
@@ -108,7 +109,7 @@ public class controllerListaClientes implements Initializable {
         System.out.println("table view carregada!");
     }
 
-    public void selecionarItemTableView (Cliente c) {
+    private void selecionarItemTableView (Cliente c) {
         System.out.println("Cliente selecionado!");
         clearEnd();
         labelClienteCodigo.setText(String.valueOf(c.getCodigoDoCliente()));
@@ -120,9 +121,9 @@ public class controllerListaClientes implements Initializable {
 
     }
 
-    public void filtrarNomes(String s) {
+    private void filtrarNomes(String s) {
         try{
-            carregarTableViewClientes(bd.buscaCliente(s));
+            carregarTableViewClientes(bd.getListaClientePorNome(s));
         } catch (NullPointerException e) {
             System.out.println("Nao possui clientes com esse nome! Ou nome errado!");
         }

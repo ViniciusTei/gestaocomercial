@@ -53,7 +53,7 @@
                                         <Label text="Nome:" GridPane.rowIndex="1" />
                                         <Label text="CPF:" GridPane.rowIndex="2" />
                                         <Label text="E-mail:" GridPane.rowIndex="3" />
-                              <TextField fx:id="txtCodigo" GridPane.columnIndex="1" />
+                              <TextField fx:id="txtCodigo" editable="false" GridPane.columnIndex="1" />
                               <TextField fx:id="txtNome" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                               <TextField fx:id="txtCpf" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                               <TextField fx:id="txtEmail" GridPane.columnIndex="1" GridPane.rowIndex="3" />
@@ -90,8 +90,8 @@
                                 </GridPane>
                                 <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                            <children>
-                              <Button fx:id="btnCadastrar" mnemonicParsing="false" text="Cadastrar Cliente" />
-                              <Button fx:id="btnEnd" mnemonicParsing="false" text="Cadastrar Endereço" />
+                              <Button fx:id="btnCadastrar" mnemonicParsing="false" onAction="#handleBtnCadastrarCliente" text="Alterar Cliente" />
+                              <Button fx:id="btnEnd" mnemonicParsing="false" onAction="#handleBtnCadastrarEndereco" text="Cadastrar Endereço" />
                            </children>
                                 </HBox>
                             </children></VBox>
