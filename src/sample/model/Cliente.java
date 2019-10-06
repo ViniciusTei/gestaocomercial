@@ -65,5 +65,7 @@ public class Cliente {
         return this.enderecos;
     }
 
+    public static class Produto {
+    }
 }
 

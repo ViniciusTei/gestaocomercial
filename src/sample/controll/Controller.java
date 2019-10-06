@@ -25,6 +25,18 @@ public class Controller implements Initializable {
     }
 
     @FXML
+    public void handleBtnCadastrarProduto () throws IOException {
+        AnchorPane newAnchorPane = (AnchorPane) loader.load(getClass().getResource("/sample/view/viewCadastroProduto.fxml"));
+        this.anchorPanePrincipal.getChildren().setAll(newAnchorPane);
+    }
+
+    @FXML
+    public void handleMenuCadastrarProduto () throws IOException {
+        AnchorPane newAnchorPane = (AnchorPane) loader.load(getClass().getResource("/sample/view/viewCadastroProduto.fxml"));
+        this.anchorPanePrincipal.getChildren().setAll(newAnchorPane);
+    }
+
+    @FXML
     public void handleBtnListarCliente () throws IOException {
         loader = new FXMLLoader(getClass().getResource("/sample/view/viewListaClientes.fxml"));
         AnchorPane newAnchorPane = (AnchorPane) loader.load();

@@ -12,11 +12,9 @@ public class Main extends Application {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("view/interface1.fxml"));
         Parent root = loader.load();
         primaryStage.setTitle("Gestão Comercial");
-
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
     }
-
 
     public static void main(String[] args) {
         launch(args);

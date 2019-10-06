@@ -17,7 +17,7 @@
         <Menu mnemonicParsing="false" text="Cadastrar">
           <items>
             <MenuItem mnemonicParsing="false" onAction="#handleMenuCadastrarCliente" text="Cliente" />
-            <MenuItem mnemonicParsing="false" onAction="#handleMenuCadastrarProduto" text="Produto" />
+            <MenuItem mnemonicParsing="false" text="Produto" />
             <MenuItem mnemonicParsing="false" text="Venda" />
           </items>
         </Menu>
@@ -31,7 +31,7 @@
         <Menu mnemonicParsing="false" text="Listar">
           <items>
                   <MenuItem fx:id="menuItemListarCliente" mnemonicParsing="false" onAction="#handleMenuListarCliente" text="Clientes" />
-                <MenuItem mnemonicParsing="false"  text="Produtos" />
+            <MenuItem mnemonicParsing="false" text="Produtos" />
                   <MenuItem mnemonicParsing="false" text="Vendas" />
           </items>
         </Menu>
@@ -44,7 +44,7 @@
                   <VBox prefHeight="200.0" prefWidth="100.0" spacing="50.0">
                      <children>
                         <Label text="Cadastrar" />
-                        <Button mnemonicParsing="false" onAction="#handleBtnCadastrarProduto" text="Produto" />
+                        <Button mnemonicParsing="false" text="Produto" />
                         <Button fx:id="btnCadastrarCliente" mnemonicParsing="false" onAction="#handleBtnCadastrarCliente" text="Cliente" />
                         <Button mnemonicParsing="false" text="Venda" />
                      </children>

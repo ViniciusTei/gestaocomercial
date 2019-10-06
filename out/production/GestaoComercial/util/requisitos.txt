@@ -1,0 +1,86 @@
+TP Gestao comercial
+
+To-Do:
+    cadastramento de produtos
+    cadastramento de clientes -> FALTA TRATAR ERROS NAS ENTRADAS DE CADASTRO
+    cadastramento de vendas
+    listagem de produtos/clientes/vendas
+    alteração de estoque
+    alteração de dados dos clientes
+    alteração status de uma venda
+
+Objetos:
+    1. Tipo de Produto: 
+        nome
+        descricao
+        metodos:
+            gets e sets
+    2. Produto:
+        codigo
+        descricao
+        preço
+        qtd em estoque
+        categoria(enum)
+        tipo
+        metodos:
+            gets e sets
+            retira do estoque: retira do estoque uma quantidade passada por parametro
+            add no estoque:  add no estoque uma quatidade passada pro parametro
+    3.Endereco
+        rua
+        bairro
+        cidade
+        estado
+        cep
+        metodos:
+            gets e sets  
+    4.Cliente:
+        código
+        cpf
+        nome
+        email
+        senha
+        lista de endereços
+        metodos:
+            gets e sets
+            add endereco: adiciona um novo elemento na lista
+            remove endereco: remove um endereco da lista
+            edita endereco: edita um endereco existente
+            busca endereco: retorna um endereco escolhido
+    5.Venda
+        status
+        data
+        data-entrega
+        data-previsao
+        cliente
+        endereço de entrega
+        lista de produtos
+        metodos:
+            gets e sets
+            altera status
+    6.BDSistema
+        //uma classe auxiliar que funciona como um banco de dados a classe de interface terá acesso apenas a essa classe
+        lista de produtos (estoque)
+        lista de clientes
+        lista de vendas
+            inicia lista de clientes
+            altera cliente
+            add cliente
+            busca cliente
+            inicia estoque
+            altera estoque
+            add item estoque (private)
+            remove item estoque (private)
+            busca item
+            add venda
+            altera status venda
+            verifica status venda
+
+    7.Interface
+        tela principal:
+            botoes para cadastro, editar e visualizar
+        tela cadastro cliente
+        tela cadstro venda
+        tela cadastro prdouto
+
+    obs: verificar como passar propriedades de um controller para outro;
